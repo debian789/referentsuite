@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="google-site-verification" content="frHqvbBW-FgsYxY3UXoCw2Dcyp5T7S-RaabvtmzlF-M" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title>Biblioteca de  Referencia </title>
+	<link rel="stylesheet" href="/css/estilo.css"/>
+
+</head>
+<body>
+	<header>
+		<div class="barraTitulo">
+			<div class="logo">
+				<span class="icon-books "></span>
+				BIBLIOTECA DE REFERENCIA 
+				<div class="session">
+					<a href="/" class="icon-home inicio  "></a> 
+					<spam class="itemIngresar"><span class="icon-enter lineaDerecha"></span> Ingresar</spam>
+				</div>
+
+				<div class="itemSesion">
+					<a href="/login/twitter/" class="inicioTwitter" > <span class="icon-twitter"></span> ENTRA CON TWITTER</a>
+					<a href="/login/google/" class="inicioGoogle" > <span class="icon-google-plus2"></span> ENTRA CON GOOGLE+</a>
+				</div>			
+			</div >
+
+			<div data-magellan-expedition="fixed">
+				<dl class="sub-nav">
+					<div class="subMenuPrincipal">
+						<div class="activarBuscador">Buscador</div>
+						<div class="menuMobilPrincipal">Menu</div>				
+					</div>
+
+					<div class="limpiarEspacio"></div>
+
+					<div class="menuBuscador">
+						<nav class="principalMenu ">
+							<ul>
+
+
+								<!-- <li > -->
+								<li class="menuItem" >
+									<a href="/comandos-publicos/" >
+										Comandos <span class=" icon-code"></span>
+									</a>
+								</li>
+
+								<!-- <li  style="background:#A9BDE6"> -->
+								<li class="menuItem"  style="border: 1px solid #ccc ">
+									<a href="/codigos-publicos/" >
+										Codigos <span class=" icon-code"></span>
+									</a>
+								</li>
+
+								<!-- <li > -->
+								<li class="menuItem" >
+									<a href="/proyectos-publicos/" >
+										Proyectos <span class=" icon-code"></span>
+									</a>
+								</li>
+
+
+
+
+
+							</ul>
+						</nav>
+						<div class="principalMenuBuscador ">
+
+							<form action="." method="post" class="menuMovil " >
+								<!-- <span class="tituloBuscar">Buscar</span> -->
+								<input class="input" id="id_busqueda" maxlength="200" name="busqueda" placeholder="Buscar" type="text" />
+								<article class="opcionBuscar">			
+									<input type="submit" value="Buscar" class=' btnBuscador'>			
+								</article>
+								<span class="masOpciones icon-settings"></span>
+								<div class="filtros">
+									<div class="itemFiltros">
+										<!-- <div class="nombreFiltro"><span>Lenguaje de Progrmacion</span></div> -->
+										<div class="datosFiltro"><span>
+											<select id="id_lenguaje" name="lenguaje">
+												<option value="" selected="selected">Lenguaje de Progrmacion</option>
+												<option value="1">python</option>
+												<option value="2">javascript</option>
+												<option value="3">css</option>
+												<option value="4">html</option>
+												<option value="5">java</option>
+												<option value="6">c</option>
+												<option value="7">php</option>
+												<option value="9">ruby</option>
+												<option value="11">Multilenguaje</option>
+												<option value="12">Otros</option>
+												<option value="13">xml</option>
+												<option value="14">json</option>
+												<option value="8">asembler</option>
+											</select>
+										</span></div>
+									</div>
+									<div class="opcionCheckbox">
+										<input id="id_adjunto" name="adjunto" type="checkbox" />
+										<label for="id_adjunto">Archivo Adjunto</label>
+									</div>
+								</div>
+								<input type='hidden' name='csrfmiddlewaretoken' value='sLSt8qlZ6Nh0a7ZeXIkzQdVHdov6XVwP' />
+							</form>
+
+							<div id="modalAdministracion" class="reveal-modal  small medium" data-reveal>
+								<a class="close-reveal-modal">&#215;</a>
+
+
+<article class="ingresoCodigo">
+	<div class="subTitulo">
+	</div>
+	<form action="/codigo/agregar/" method="post" enctype="multipart/form-data">	
+		<div class="ingresoTitulo">
+			<span>Titulo</span>
+			<input id="id_titulo" maxlength="500" name="titulo" required="" title="Se necesita un Titulo" type="text">
+		</div>
+<!--		<hr>
+		<div class="urlLenguaje">
+			<div class="ingresoUrl">
+				<span>Url</span>
+				<input id="id_links" maxlength="300" name="links" pattern="https?://.+" title="http://pagina.com o http://www.pagina.com" type="url">
+			</div>
+			<div class="ingresoLenguaje">
+				<span>Lenguaje</span>
+				<select id="id_lenguaje" name="lenguaje" required="" title="Se necesita un Lenguaje ">
+<option value="" selected="selected">---------</option>
+<option value="1">python</option>
+<option value="2">javascript</option>
+<option value="3">css</option>
+<option value="4">html</option>
+<option value="5">java</option>
+<option value="6">c</option>
+<option value="7">php</option>
+<option value="9">ruby</option>
+<option value="11">Multilenguaje</option>
+<option value="12">Otros</option>
+<option value="13">xml</option>
+<option value="14">json</option>
+<option value="8">asembler</option>
+</select>
+			</div>
+		</div>		
+		<hr>
+		<div class="ingresoAdjunto">
+			<span>Archivo Adjunto </span>
+			<input id="id_archivo" name="archivo" type="file">
+		</div>
+		<hr>
+		<div class="descripcionCodigo">
+			<div class="ingresoDescripcion">
+				<span>Descripcion</span>
+				<textarea cols="40" id="id_descripcion" name="descripcion" rows="10"></textarea>
+			</div>
+			<div class="ingresoCodigoFuente">
+				<span>Codigo</span>			
+				<textarea cols="40" id="id_codigo" name="codigo" required="" rows="10" title="Se necesita un Codigo "></textarea>
+			</div>
+
+		<div class="ingresoCodigoFuente">
+				<span>Compartir el codigo en la plataforma </span>			
+				<input id="id_estado" name="estado" type="checkbox">
+			</div>
+		</div>
+		<hr> -->
+		<div class="guardarCodigo">
+			<div class="publicar"></div>
+			<input type="submit" value="Guardar" class="boton">
+		</div>
+		
+	</form>	
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</dl>
+		</div>
+	</header>
+
+
+
+
+
+
+
+
+
+	<section class="contenido">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div class="subNavegacion">
+			<a href="/ " > Home </a> >
+
+			<a href="/codigos-publicos/" class="activado"> Codigos </a>  
+
+		</div>
+
+
+
+
+		<article class="resultadoBusqueda">
+			<div class="subTituloBarra ">
+
+				<h3>Codigos publicados </h3>
+			
+<div class="opcionesVisualizacion">
+			<div class="botonCrear   ">
+				<a href="/codigo/agregar/" class="opcionNuevo" data-reveal-id="modalAdministracion" data-reveal="">	
+					Nuevo <span class=" icon-plus-sign"></span>
+				</a>
+			</div>
+		</div>
+
+			</div>	
+
+
+
+
+			<article class="detalles">		
+			</article>
+
+
+
+
+
+
+
+			<script type="text/x-handlebars-template" id="itemCode-template">			
+			<h4>
+			<a href="/codigo-publico/detalles/17/">{{ titulo }}</a>
+			</h4>
+			<div class="favoritoCodigo">
+			<a href="" class="icon-star"></a>
+			</div>
+			<p >{{ descripcion }}  </p>
+			<hr/>
+			<div class="informacionLenguaje">		
+			<div>{{ lenguaje }}</div>
+			</div>
+			<div class="edicionCodigo">
+			<a href="/codigo/pdf/17/" class="icon-file-pdf colorRojo"></a>
+
+			<!-- <a href="" class=" icon-download2 colorVerde"></a> -->
+
+			</div>
+
+
+
+			</script>
+
+
+
+			<script type="text/x-handlebars-template" id="itemCodeDetails-template">		
+			<div class="subTitulo ">
+			<h3><span class="colorVerde">Detalles del Codigo</span>  </h3>
+			<div class="opcionesVisualizacion">
+			<a href="/codigo/pdf/11/" class="icon-file-pdf colorRojo "></a>
+			</div>	
+			</div>
+			<div class="tituloDetalles">
+			<h1>{{ titulo }} </h1>
+			<div> compartir</div>
+			</div>
+			<div class="descripcionInformacion">
+			<div class="descripcionDetallada">
+			<div class=""><strong><span>Descripcion</span></strong></div>
+			<p>{{ descripcion }}</p>
+			<div class="masInformacionDetallada"> Mas informacion  &nbsp; <span class=" icon-expand2"> </span></div>
+			</div>
+			<div class="descripcionExtra fondoVerdeD">
+			<div class="tituloExtra">Informacion Extra </div>
+			<div class="tituloDescripcion"><span>{{ lenguaje }}  </span>
+			<span>python</span>
+			</div>
+			<div class="tituloDescripcion"><span>Adjunto </span>
+			<span>Sin adjunto </span>
+			</div>
+			</div>
+			</div>
+			<div> <p></p> </div>
+			<div class="subTitulo2"><span>Codigo Fuente</span></div>
+			<div class="descripcionCodigo"> <div class="highlight">
+			<pre>
+			{{ codigo }}
+			</pre>
+			</div>
+			</div>
+
+			</script>
+
+
+
+
+
+
+
+			<div id="itemCollection" class="js-masonry">
+
+				<div class="itemIngresadosCodigos lineaColorB"  >
+
+					<h4>
+						<a href="/codigo-publico/detalles/17/">Asd</a>
+					</h4>
+					<div class="favoritoCodigo">
+						<a href="" class="icon-star"></a>
+					</div>
+					<p >asd  </p>
+					<hr/>
+					<div class="informacionLenguaje">		
+						<div>python</div>
+					</div>
+					<div class="edicionCodigo">
+						<a href="/codigo/pdf/17/" class="icon-file-pdf colorRojo"></a>
+
+						<!-- <a href="" class=" icon-download2 colorVerde"></a> -->
+
+					</div>
+
+				</div>
+
+
+			</div>
+
+			<div class="pagination">
+				<span class="step-links">
+
+					<span class="current">
+						Pagina 1 de 2.
+					</span>
+
+					<a href="?page=2">Siguiente</a>
+
+				</span>
+			</div>
+
+
+
+		</article>
+
+
+
+
+	</section>
+	<aside>
+	</aside>
+	<section class="contenidoInicio">
+
+	</section>
+	<footer>
+		<a href="https://github.com/debian789/BibliotecaCodigo" target="_black">Mas informacion del proyecto <span class=" icon-github3"></span> <span> debian789@gmail.com</span></a> 
+	</footer>
+
+	<script type="text/javascript" src="/lib/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="/lib/underscore-min.js"></script>
+	<script type="text/javascript" src="/lib/underscore.string.js"></script>
+
+	<script type="text/javascript" src="/lib/handlebars-v1.3.0.js"></script>
+	<script type="text/javascript" src="/lib/backbone-min.js"></script>
+	<script type="text/javascript" src="/lib/foundation.min.js"></script>
+
+
+
+
+
+	<script type="text/javascript" src="/js/app.js"></script>
+
+	<script type="text/javascript" src="/js/models/code.js"></script>
+	<script type="text/javascript" src="/js/models/codes.js"></script>
+
+	<script type="text/javascript" src="/js/collections/code.js"></script>
+	<script type="text/javascript" src="/js/collections/codes.js"></script>
+
+
+	<script type="text/javascript" src="/js/views/code.js"></script>
+	<script type="text/javascript" src="/js/views/listCodes.js"></script>
+	<script type="text/javascript" src="/js/views/codeDetail.js"></script>
+	<script type="text/javascript" src="/js/views/createCode.js"></script>
+
+
+
+
+
+	<script type="text/javascript" src="/js/routers/router.js"></script>
+
+	<script type="text/javascript" src="/js/main.js"></script>
+
+	<script>
+	$(document).foundation();
+	</script>
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-47447387-1', 'cryptic-mesa-8094.herokuapp.com');
+	ga('send', 'pageview');
+	</script>
+</body>
+</html>
