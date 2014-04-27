@@ -1,3 +1,3 @@
 Referentsuite.Models.Code = Backbone.Model.extend({
-	url:"localhost"
+	url:"/codes"
 });

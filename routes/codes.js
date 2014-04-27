@@ -9,4 +9,11 @@ router.get('/', function(req, res) {
   res.send(data);
 });
 
+router.post('/',function(req, res){
+	data.push(req.body);
+	res.send(200,{status:"Ok"});
+	//debugger;
+});
+
+
 module.exports = router;
